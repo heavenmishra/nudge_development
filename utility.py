@@ -48,9 +48,17 @@ def filterout(content):
         string_blocks.append(strings)
     return string_blocks
 
-def extract_query(final_content):
-    
-    pass
-# def generate_path():
-#     current_path=os.getcwd()
-#     return current_path
+def get_(block,starting_tag,ending_tag):
+    starting_index = block.index(starting_tag)+len(starting_tag)
+    ending_index = starting_index + block[starting_index:].index(ending_tag)
+    return block[starting_index:ending_index]
+
+def generate_path():
+    current_dir = os.getcwd()
+    path_element = current_dir.split("\\")
+    path_of_input_file="d:\\"
+    for i in path_element[1:-2]:
+        path_of_input_file = path_of_input_file +"\\"+i
+
+    path_of_input_file = path_of_input_file +"\\event_deployment\\test_1\\"
+    return path_of_input_file
