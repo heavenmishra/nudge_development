@@ -23,3 +23,5 @@ for i in final_content:
 
 # print(list_of_queries)
 # print(list_of_tables)
+
+# print(artifact_content("0000","Testing",list_of_queries,list_of_tables))

@@ -1,0 +1,6 @@
+# Environment folders
+ci-cd/
+cicd/
+_pycache_/
+*.pyc
+test.py

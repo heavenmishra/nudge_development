@@ -57,8 +57,16 @@ def generate_path():
     current_dir = os.getcwd()
     path_element = current_dir.split("\\")
     path_of_input_file="d:\\"
-    for i in path_element[1:-2]:
+    for i in path_element[1:-3]:
         path_of_input_file = path_of_input_file +"\\"+i
 
     path_of_input_file = path_of_input_file +"\\event_deployment\\test_1\\"
     return path_of_input_file
+
+def artifact_content(event_id,event_name,list_of_queries,list_of_tables):
+    list_for_artifact=[] #event_id,event_name,query,sequence,intermidate_table,final_table
+    for i in range(len(list_of_tables)-1):
+        list_for_artifact.append((event_id,event_name,list_of_queries[i],i+1,list_of_tables[i],None))
+
+    list_for_artifact.append((event_id,event_name,list_of_queries[-1],len(list_of_tables),None,list_of_tables[-1]))
+    return list_for_artifact
