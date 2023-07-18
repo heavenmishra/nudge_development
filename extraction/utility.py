@@ -48,6 +48,16 @@ def filterout(content):
         string_blocks.append(strings)
     return string_blocks
 
+def event_details(dir_path):
+    list_of_files=os.listdir(dir_path)
+    event_id_list = []
+    event_name_list = []
+    print(list_of_files)
+    for file_name in list_of_files:
+        event_id_list.append(file_name.split("_")[0])
+        event_name_list.append(file_name.split("_")[1].split(".")[0])
+    return event_id_list,event_name_list
+
 def get_(block,starting_tag,ending_tag):
     starting_index = block.index(starting_tag)+len(starting_tag)
     ending_index = starting_index + block[starting_index:].index(ending_tag)
