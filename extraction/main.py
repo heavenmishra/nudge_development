@@ -1,7 +1,7 @@
 from utility import *
 
 input_path = generate_path()
-with open(input_path+"test2.ipynb","r") as file:
+with open(input_path+"0002_test2.ipynb","r") as file:
     raw_content = file.read()
     file.close()
 
@@ -24,4 +24,9 @@ for i in final_content:
 # print(list_of_queries)
 # print(list_of_tables)
 
-# print(artifact_content("0000","Testing",list_of_queries,list_of_tables))
+artifact_list = artifact_content("0002","test2",list_of_queries,list_of_tables)
+
+if artifact_creation("0002",artifact_list) is True:
+    print("Successfully created artifact :")
+else:
+    print("there is a problem while creating the artifact")
